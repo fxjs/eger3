@@ -68,8 +68,8 @@ class Main extends eui.UILayer {
     private createGameScene():void {
         
         game.AppFacade.getInstance().startUp(GameLayerManager.gameLayer());
-        game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_S_1);
-        game.AppFacade.getInstance().sendNotification(MainNotify.OPEN_MAIN);
+        // game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_HOME);
+        game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_PAGE_A);
 
     }
 

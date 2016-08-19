@@ -58,8 +58,8 @@ var Main = (function (_super) {
      */
     p.createGameScene = function () {
         game.AppFacade.getInstance().startUp(GameLayerManager.gameLayer());
-        game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_S_1);
-        game.AppFacade.getInstance().sendNotification(MainNotify.OPEN_MAIN);
+        // game.AppFacade.getInstance().sendNotification(SceneNotify.OPEN_HOME);
+        game.AppFacade.getInstance().sendNotification(PanelNotify.OPEN_PAGE_A);
     };
     return Main;
 }(eui.UILayer));

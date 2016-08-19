@@ -14,13 +14,8 @@ var game;
         var d = __define,c=ViewPrepCommand,p=c.prototype;
         p.execute = function (notification) {
             var main = GameLayerManager.gameLayer().panelLayer;
-            this.facade.registerMediator(new game.RoleMediator());
-            this.facade.registerMediator(new game.BackpackMediator());
-            this.facade.registerMediator(new game.QianghuaMediator());
-            this.facade.registerMediator(new game.ZhaoXianMediator());
-            this.facade.registerMediator(new game.ChuangDangMediator());
-            this.facade.registerMediator(new game.ShopMediator());
-            this.facade.registerMediator(new game.MapMediator());
+            // 在此注册 Page 类
+            this.facade.registerMediator(new game.PageAMediator());
         };
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));

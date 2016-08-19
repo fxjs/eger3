@@ -40,18 +40,17 @@
 
     <!--这个标签会被替换为项目中所有的 javascript 文件-->
     <!--game_files_start-->
-	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
 	<script egret="game" src="bin-debug/component/EButton.js"></script>
 	<script egret="game" src="bin-debug/component/EImage.js"></script>
 	<script egret="game" src="bin-debug/component/ETextField.js"></script>
 	<script egret="game" src="bin-debug/config/GameConfig.js"></script>
 	<script egret="game" src="bin-debug/config/GlobalData.js"></script>
 	<script egret="game" src="bin-debug/constants/MainNotify.js"></script>
-	<script egret="game" src="bin-debug/constants/panel/UserInfoNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/PanelNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/SceneNotify.js"></script>
 	<script egret="game" src="bin-debug/constants/SysNotify.js"></script>
-	<script egret="game" src="bin-debug/core/AppFacade.js"></script>
+	<script egret="game" src="bin-debug/core/config/AppFacade.js"></script>
+	<script egret="game" src="bin-debug/core/config/GameLayerManager.js"></script>
 	<script egret="game" src="bin-debug/core/controller/ControllerPrepCommand.js"></script>
 	<script egret="game" src="bin-debug/core/controller/ModelPrepCommand.js"></script>
 	<script egret="game" src="bin-debug/core/controller/Processor/Processor_100_1.js"></script>
@@ -63,32 +62,19 @@
 	<script egret="game" src="bin-debug/core/model/proxy/GameProxy.js"></script>
 	<script egret="game" src="bin-debug/core/model/proxy/TemplateProxy.js"></script>
 	<script egret="game" src="bin-debug/core/model/vo/GameVO.js"></script>
-	<script egret="game" src="bin-debug/core/view/GameLayerManager.js"></script>
-	<script egret="game" src="bin-debug/core/view/main/ActivityBar.js"></script>
-	<script egret="game" src="bin-debug/core/view/main/FunctionBar.js"></script>
-	<script egret="game" src="bin-debug/core/view/main/MainPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/main/MainUI.js"></script>
-	<script egret="game" src="bin-debug/core/view/main/RoleInfo.js"></script>
-	<script egret="game" src="bin-debug/core/view/MainManager.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/BaseMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/BackpackMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/ChuangDangMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/MapMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/QianghuaMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/RoleMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/ShopMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/mediator/ZhaoXianMediator.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/BackpackPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/ChuangDangPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/MapPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/QianghuaPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/RolePanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/ShopPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/panel/ZhaoXianPanel.js"></script>
-	<script egret="game" src="bin-debug/core/view/panel/PopUpManager.js"></script>
-	<script egret="game" src="bin-debug/core/view/scene/S1.js"></script>
-	<script egret="game" src="bin-debug/core/view/SceneManager.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/core/view/main/manager/MainManager.js"></script>
+	<script egret="game" src="bin-debug/core/view/main/ui/FunctionBar.js"></script>
+	<script egret="game" src="bin-debug/core/view/main/ui/MainUI.js"></script>
+	<script egret="game" src="bin-debug/core/view/panel/base/BaseMediator.js"></script>
+	<script egret="game" src="bin-debug/core/view/panel/base/PopUpManager.js"></script>
+	<script egret="game" src="bin-debug/core/view/panel/mediator/PageAMediator.js"></script>
+	<script egret="game" src="bin-debug/core/view/panel/ui/PageA.js"></script>
+	<script egret="game" src="bin-debug/core/view/panel/ui/PageCloseBtn.js"></script>
+	<script egret="game" src="bin-debug/core/view/scene/manager/SceneManager.js"></script>
+	<script egret="game" src="bin-debug/core/view/scene/ui/HomeCity.js"></script>
+	<script egret="game" src="bin-debug/loading/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/loading/LoadingPanel.js"></script>
+	<script egret="game" src="bin-debug/loading/WaitPanel.js"></script>
 	<script egret="game" src="bin-debug/Main.js"></script>
 	<script egret="game" src="bin-debug/net/SocketManager.js"></script>
 	<script egret="game" src="bin-debug/utils/EffectUtils.js"></script>
@@ -99,7 +85,6 @@
 	<script egret="game" src="bin-debug/utils/TipsPanel.js"></script>
 	<script egret="game" src="bin-debug/utils/UtilsClass/BitmapBlink.js"></script>
 	<script egret="game" src="bin-debug/utils/UtilsClass/TipsUtils.js"></script>
-	<script egret="game" src="bin-debug/WaitPanel.js"></script>
 	<!--game_files_end-->
 </head>
 <body>

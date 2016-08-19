@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PageASkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*">
+	<e:Image id="pageABg" source="bg2_jpg" left="0" right="0" top="0" bottom="0"/>
+	<e:Button id="pageClose" label="按钮" right="0" skinName="PageCloseBtnSkin"/>
+</e:Skin>

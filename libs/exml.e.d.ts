@@ -90,29 +90,13 @@ declare module main{
 	class ZhaoXianBtnSkin extends eui.Skin{
 	}
 }
-declare class ActivityBarSkin extends eui.Skin{
-}
 declare class FunctionBarSkin extends eui.Skin{
 }
 declare class MainUISkin extends eui.Skin{
 }
-declare class RoleInfoSkin extends eui.Skin{
+declare class PageASkin extends eui.Skin{
 }
-declare class BackpackSkin extends eui.Skin{
-}
-declare class ChuangDangSkin extends eui.Skin{
-}
-declare class MapSkin extends eui.Skin{
-}
-declare class QianghuaSkin extends eui.Skin{
-}
-declare class RoleSkin extends eui.Skin{
-}
-declare class ShopSkin extends eui.Skin{
-}
-declare class ZhaoXianSkin extends eui.Skin{
+declare class PageCloseBtnSkin extends eui.Skin{
 }
 declare class HomeCitySkin extends eui.Skin{
-}
-declare class S1 extends eui.Skin{
 }

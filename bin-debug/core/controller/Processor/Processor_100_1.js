@@ -25,7 +25,7 @@ var game;
             //反序列化
             var new_user_login = user_login_class.decode(data.buffer);
             console.log("反序列化数据：", new_user_login);
-            this.sendNotification(UserInfoNotify.UPDATE_DATA, new_user_login);
+            // this.sendNotification(UserInfoNotify.UPDATE_DATA,new_user_login);
         };
         Processor_100_1.NAME = "Processor_100_1";
         return Processor_100_1;
