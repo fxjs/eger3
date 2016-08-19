@@ -33,7 +33,7 @@ class BaseMediator extends puremvc.Mediator implements puremvc.IMediator{
         this.beforShow();
         this.initUI();
         this.initData();
-        PopUpManager.addPopUp(ui,dark,popUpWidth,popUpHeight,effectType,isAlert);
+        PopUpManager.addPopUp(ui,dark,popUpWidth,popUpHeight,effectType,isAlert, duration);
     }	
     
 

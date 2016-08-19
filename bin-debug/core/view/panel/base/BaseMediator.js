@@ -26,19 +26,21 @@ var BaseMediator = (function (_super) {
     * dark        		背景是否变黑
     * popUpWidth      	指定弹窗宽度，定位使用
     * popUpHeight      	指定弹窗高度，定位使用
-    * effectType        0：没有动画 1:从中间轻微弹出 2：从中间猛烈弹出  3：从左向右 4：从右向左 5、从上到下 6、从下到上
+    * effectType        0：没有动画 1:从中间轻微弹出 2：从中间猛烈弹出  3：从左向右 4：从右向左 5、从上到下 6、从下到上 7、淡入
+    * duration          动画持续时间
     */
-    p.showUI = function (ui, dark, popUpWidth, popUpHeight, effectType, isAlert) {
+    p.showUI = function (ui, dark, popUpWidth, popUpHeight, effectType, isAlert, duration) {
         if (dark === void 0) { dark = false; }
         if (popUpWidth === void 0) { popUpWidth = 0; }
         if (popUpHeight === void 0) { popUpHeight = 0; }
         if (effectType === void 0) { effectType = 0; }
         if (isAlert === void 0) { isAlert = false; }
+        if (duration === void 0) { duration = 500; }
         this.ui = ui;
         this.beforShow();
         this.initUI();
         this.initData();
-        PopUpManager.addPopUp(ui, dark, popUpWidth, popUpHeight, effectType, isAlert);
+        PopUpManager.addPopUp(ui, dark, popUpWidth, popUpHeight, effectType, isAlert, duration);
     };
     /**
      * 面板弹出之前处理

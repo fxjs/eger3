@@ -13,14 +13,16 @@ var PopUpManager;
     * dark        		背景是否变黑
     * popUpWidth      	指定弹窗宽度，定位使用
     * popUpHeight      	指定弹窗高度，定位使用
-    * effectType        0：没有动画 1:从中间轻微弹出 2：从中间猛烈弹出  3：从左向右 4：从右向左 5、从上到下 6、从下到上
+    * effectType        0：没有动画 1:从中间轻微弹出 2：从中间猛烈弹出  3：从左向右 4：从右向左 5、从上到下 6、从下到上 7、淡入
+    * duration          动画持续时间
     */
-    function addPopUp(panel, dark, popUpWidth, popUpHeight, effectType, isAlert) {
+    function addPopUp(panel, dark, popUpWidth, popUpHeight, effectType, isAlert, duration) {
         if (dark === void 0) { dark = false; }
         if (popUpWidth === void 0) { popUpWidth = 0; }
         if (popUpHeight === void 0) { popUpHeight = 0; }
         if (effectType === void 0) { effectType = 0; }
         if (isAlert === void 0) { isAlert = false; }
+        if (duration === void 0) { duration = 500; }
         if (GameLayerManager.gameLayer().panelLayer.contains(panel)) {
             return;
         }
@@ -114,6 +116,16 @@ var PopUpManager;
                 else {
                     panel.y = popUpHeight;
                     egret.Tween.get(panel).to({ y: 0 }, 500, egret.Ease.cubicOut);
+                }
+                break;
+            case 7:
+                if (isAlert) {
+                    panel.y = GameConfig.curHeight();
+                    egret.Tween.get(panel).to({ alpha: 1, y: upY }, duration, egret.Ease.cubicOut);
+                }
+                else {
+                    panel.y = popUpHeight;
+                    egret.Tween.get(panel).to({ y: 0, alpha: 1 }, 500, egret.Ease.sineIn);
                 }
                 break;
             default:
