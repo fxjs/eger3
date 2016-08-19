@@ -1,4 +1,4 @@
-#EGER PRO
+#EGER3
 
 ===================================
 
@@ -62,19 +62,3 @@ http://eger.sinaapp.com/code/egerpro/
     dily xsstomy fany stone 天幻
     
     有想加入把EGER-PRO做的更强大的小窗联系我吧！
-  
-### 链接
-
-想要一起交流么，快快加入吧！
-EGER极速开发交流群：70843223
-
-### 觉得不错就支持我一下！
-
-右上角收藏和关注！
-
-### 或者加我好友，互相学习
-
-<img src="http://eger.sinaapp.com/code/public/dily.png" alt="qq" title="Egret极速开发框架EGER"/>
-
-[Egret官方网站](egret-labs.org)<br />
-[我的微博](http://weibo.com/1856526021/profile?topnav=1&wvr=6)<br />
