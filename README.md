@@ -1,10 +1,8 @@
-#EGER3
+#eger3
 
 ===================================
 
   HTML5重度游戏开发解决方案
-  
-加群点击右侧按钮： <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=e3bba025902c371f851e6f104bc8100a870b9da0963f98f883c17e0a45f3abbd"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Egret极速开发框架EGER" title="Egret极速开发框架EGER"></a>
 
 演示地址：
 http://eger.sinaapp.com/code/egerpro/
