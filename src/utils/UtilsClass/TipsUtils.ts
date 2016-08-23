@@ -13,17 +13,17 @@ module TipsUtils {
         var effectTips = new egret.TextField();
 
         effectTips.size = 24;
-        effectTips.y = GameConfig.curHeight()/2;
+        effectTips.y = GlobalConfig.curHeight()/2;
         if(isWarning){
-            effectTips.textColor = GameConfig.TextColors.red;
+            effectTips.textColor = GlobalConfig.TextColors.red;
         }else{
-            effectTips.textColor = GameConfig.TextColors.green;
+            effectTips.textColor = GlobalConfig.TextColors.green;
         }
         effectTips.alpha = 0;
         
         effectTips.text = str;
         effectTips.strokeColor = 0x000000;
-        effectTips.x = GameConfig.curWidth()/2 - effectTips.width/2;        
+        effectTips.x = GlobalConfig.curWidth()/2 - effectTips.width/2;        
         effectTips.stroke  = 2;
         effectTips.bold = true;
         effectTips.textAlign = egret.HorizontalAlign.CENTER;
@@ -50,11 +50,11 @@ module TipsUtils {
         var effectTips = new egret.TextField();
 
         effectTips.size = 24;
-        effectTips.y = GameConfig.curHeight()/2;
+        effectTips.y = GlobalConfig.curHeight()/2;
         if(isWarning){
-            effectTips.textColor = GameConfig.TextColors.red;
+            effectTips.textColor = GlobalConfig.TextColors.red;
         }else{
-            effectTips.textColor = GameConfig.TextColors.green;
+            effectTips.textColor = GlobalConfig.TextColors.green;
         }
         effectTips.alpha = 0;
         
@@ -63,7 +63,7 @@ module TipsUtils {
         if(isFromeLeft){
             effectTips.x = - effectTips.width;        
         }else{
-            effectTips.x = GameConfig.curWidth();        
+            effectTips.x = GlobalConfig.curWidth();        
         }
         effectTips.stroke  = 2;
         effectTips.bold = true;
@@ -74,9 +74,9 @@ module TipsUtils {
         }        
 
         if(isFromeLeft){
-            egret.Tween.get(effectTips).to({x:GameConfig.curWidth()/2 - effectTips.width/2 - 50,alpha:1},300,egret.Ease.sineInOut);   
+            egret.Tween.get(effectTips).to({x:GlobalConfig.curWidth()/2 - effectTips.width/2 - 50,alpha:1},300,egret.Ease.sineInOut);   
         }else{
-            egret.Tween.get(effectTips).to({x:GameConfig.curWidth()/2 - effectTips.width/2 + 50,alpha:1},300,egret.Ease.sineInOut);   
+            egret.Tween.get(effectTips).to({x:GlobalConfig.curWidth()/2 - effectTips.width/2 + 50,alpha:1},300,egret.Ease.sineInOut);   
         }
 
         egret.setTimeout(function () {
@@ -89,7 +89,7 @@ module TipsUtils {
 
         egret.setTimeout(function () {
             if(isFromeLeft){
-                egret.Tween.get(effectTips).to({x:GameConfig.curWidth()},300,egret.Ease.sineIn);    
+                egret.Tween.get(effectTips).to({x:GlobalConfig.curWidth()},300,egret.Ease.sineIn);    
             }else{
                 egret.Tween.get(effectTips).to({x:-effectTips.width},300,egret.Ease.sineIn);    
             }
@@ -109,17 +109,17 @@ module TipsUtils {
         var effectTips = new egret.TextField();
 
         effectTips.size = 24;
-        effectTips.y = GameConfig.curHeight()/2;
+        effectTips.y = GlobalConfig.curHeight()/2;
         if(isWarning){
-            effectTips.textColor = GameConfig.TextColors.red;
+            effectTips.textColor = GlobalConfig.TextColors.red;
         }else{
-            effectTips.textColor = GameConfig.TextColors.green;
+            effectTips.textColor = GlobalConfig.TextColors.green;
         }
         effectTips.alpha = 0;
         
         effectTips.text = str;
         effectTips.strokeColor = 0x000000;
-        effectTips.x = GameConfig.curWidth()/2;        
+        effectTips.x = GlobalConfig.curWidth()/2;        
         effectTips.stroke  = 2;
         effectTips.bold = true;
         effectTips.textAlign = egret.HorizontalAlign.CENTER;
@@ -151,17 +151,17 @@ module TipsUtils {
         var effectTips = new egret.TextField();
 
         effectTips.size = 24;
-        effectTips.y = GameConfig.curHeight()/2;
+        effectTips.y = GlobalConfig.curHeight()/2;
         if(isWarning){
-            effectTips.textColor = GameConfig.TextColors.red;
+            effectTips.textColor = GlobalConfig.TextColors.red;
         }else{
-            effectTips.textColor = GameConfig.TextColors.green;
+            effectTips.textColor = GlobalConfig.TextColors.green;
         }
         effectTips.alpha = 0;
         
         effectTips.text = str;
         effectTips.strokeColor = 0x000000;
-        effectTips.x = GameConfig.curWidth()/2;        
+        effectTips.x = GlobalConfig.curWidth()/2;        
         effectTips.stroke  = 2;
         effectTips.bold = true;
         effectTips.textAlign = egret.HorizontalAlign.CENTER;

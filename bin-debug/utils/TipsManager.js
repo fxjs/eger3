@@ -54,14 +54,14 @@ var TipsManager;
             point.x = point.x + attachment.width / 2;
             point.y = point.y - this._tips.getHeight();
             //tips定位
-            if (point.x + this._tips.getWidth() > GameConfig.curWidth()) {
-                point.x = GameConfig.curWidth() - this._tips.getWidth();
+            if (point.x + this._tips.getWidth() > GlobalConfig.curWidth()) {
+                point.x = GlobalConfig.curWidth() - this._tips.getWidth();
             }
             else if (point.x < 0) {
                 point.x = 0;
             }
-            if (point.y + this._tips.getHeight() > GameConfig.curHeight()) {
-                point.y = GameConfig.curHeight() - this._tips.getHeight();
+            if (point.y + this._tips.getHeight() > GlobalConfig.curHeight()) {
+                point.y = GlobalConfig.curHeight() - this._tips.getHeight();
             }
             else if (point.y < 0) {
                 point.y = 0;

@@ -6,12 +6,12 @@
   * 存放游戏的配置数据
   * 比如：游戏界面尺寸、分享随机百分比、获取系统数据
   */
-var GameConfig;
-(function (GameConfig) {
+var GlobalConfig;
+(function (GlobalConfig) {
     //是否在线
-    GameConfig.isOnLine = navigator.onLine;
+    GlobalConfig.isOnLine = navigator.onLine;
     //全局字体颜色表--可以扩展
-    GameConfig.TextColors = {
+    GlobalConfig.TextColors = {
         white: 0xFFFFFF,
         milkWhite: 0xfbf1af,
         grayWhite: 0xceb6a2,
@@ -28,7 +28,7 @@ var GameConfig;
         golden: 0xFFD700 //金色
     };
     //全局字体大小表--可以扩展
-    GameConfig.LabelFontSize = {
+    GlobalConfig.LabelFontSize = {
         littleSize: 12,
         middleSize: 18,
         normalSize: 24,
@@ -95,16 +95,30 @@ var GameConfig;
     function curStage() {
         return egret.MainContext.instance.stage;
     }
-    GameConfig.curStage = curStage;
+    GlobalConfig.curStage = curStage;
     //当前游戏宽度
     function curWidth() {
         return egret.MainContext.instance.stage.stageWidth;
     }
-    GameConfig.curWidth = curWidth;
+    GlobalConfig.curWidth = curWidth;
     //当前游戏宽度
     function curHeight() {
         return egret.MainContext.instance.stage.stageHeight;
     }
-    GameConfig.curHeight = curHeight;
-})(GameConfig || (GameConfig = {}));
-//# sourceMappingURL=GameConfig.js.map
+    GlobalConfig.curHeight = curHeight;
+    //======================================================
+    // By Fx 2016-8-22 15:36:56
+    //动画时间常量
+    GlobalConfig.FAST = 100;
+    GlobalConfig.SLOW = 300;
+    // 资源缩放常量
+    GlobalConfig.SN = 0.618; //全局min缩放比例
+    GlobalConfig.SNLG = 0.75; //全局LG缩放比例
+    GlobalConfig.SNMAX = 0.85; // 全局max缩放比例
+    // 滑动方向
+    GlobalConfig.direction = 7; // 7淡入 6向上 5向下
+    // 滑动锁
+    GlobalConfig.isPageSwitchDone = false;
+    GlobalConfig.autoTimer = null;
+})(GlobalConfig || (GlobalConfig = {}));
+//# sourceMappingURL=GlobalConfig.js.map

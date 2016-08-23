@@ -96,6 +96,8 @@ declare class MainUISkin extends eui.Skin{
 }
 declare class PageASkin extends eui.Skin{
 }
+declare class PageBSkin extends eui.Skin{
+}
 declare class PageCloseBtnSkin extends eui.Skin{
 }
 declare class HomeCitySkin extends eui.Skin{

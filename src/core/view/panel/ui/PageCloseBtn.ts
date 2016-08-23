@@ -5,11 +5,11 @@ module game {
 
 		constructor() {
 			super();
-			this.skinName = "PageCloseBtnSkin";
+			this.skinName = "PageCloseBtnSkin";			
 		}
 
-		protected childrenCreated(): void {
-			super.childrenCreated();
+		protected childrenCreated(): void {			
+			super.childrenCreated();			
 		}
 	}
 }

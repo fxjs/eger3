@@ -6,7 +6,7 @@
   * 存放游戏的配置数据
   * 比如：游戏界面尺寸、分享随机百分比、获取系统数据
   */
-module GameConfig {
+module GlobalConfig {
 
     //是否在线
     export var isOnLine: boolean = navigator.onLine;
@@ -107,16 +107,34 @@ module GameConfig {
     export var curPanel: egret.DisplayObjectContainer;
 
     //当前游戏宽度
-    export function curWidth(): number {
+    export function curWidth(): any {
         return egret.MainContext.instance.stage.stageWidth;
     }
 
     //当前游戏宽度
-    export function curHeight(): number {
+    export function curHeight(): any {
         return egret.MainContext.instance.stage.stageHeight;
     }
 
-	
+    //======================================================
+    // By Fx 2016-8-22 15:36:56
+
+    //动画时间常量
+	export const FAST: number = 100;
+	export const SLOW: number = 300;
+
+	// 资源缩放常量
+	export const SN: number = 0.618; //全局min缩放比例
+	export const SNLG: number = 0.75; //全局LG缩放比例
+	export const SNMAX: number = 0.85; // 全局max缩放比例
+
+	// 滑动方向
+	export let direction = 7; // 7淡入 6向上 5向下
+
+    // 滑动锁
+    export let isPageSwitchDone: Boolean = false;
+
+	export let autoTimer = null;	
 }
 
 

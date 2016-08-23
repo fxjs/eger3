@@ -16,8 +16,13 @@ var BaseMediator = (function (_super) {
         this.ui = null; //UI容器
         this.w = 0;
         this.h = 0;
-        this.w = GameConfig.curWidth();
-        this.h = GameConfig.curHeight();
+        /**
+         * 监听页面滑动 触发
+         */
+        this.touchPoint = [];
+        this.bMap = [];
+        this.w = GlobalConfig.curWidth();
+        this.h = GlobalConfig.curHeight();
     }
     var d = __define,c=BaseMediator,p=c.prototype;
     /**
@@ -40,22 +45,32 @@ var BaseMediator = (function (_super) {
         this.beforShow();
         this.initUI();
         this.initData();
-        PopUpManager.addPopUp(ui, dark, popUpWidth, popUpHeight, effectType, isAlert, duration);
+        PopUpManager.addPopUp(ui, dark, popUpWidth, popUpHeight, effectType, isAlert, duration, this.afterShow);
     };
     /**
      * 面板弹出之前处理
      */
     p.beforShow = function () {
+        // console.log("开始加载");
     };
     /**
      * 初始化面板ui
      */
     p.initUI = function () {
+        // console.log("初始化面板ui");
     };
     /**
      * 初始化面板数据
      */
     p.initData = function () {
+        // console.log("初始化面板数据");
+    };
+    /**
+     * 面板加载完毕
+     */
+    p.afterShow = function () {
+        console.log("加载完毕");
+        GlobalConfig.isPageSwitchDone = true;
     };
     /**
     * 移除面板方法
@@ -91,6 +106,56 @@ var BaseMediator = (function (_super) {
     // 获取面板高度
     p.getHeight = function () {
         return this.ui.height;
+    };
+    /**
+     * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
+     * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
+     * Fx 2016-7-12 09:44:48
+     */
+    p.createBitmapByName = function (name) {
+        var result = new egret.Bitmap();
+        var texture = RES.getRes(name);
+        result.texture = texture;
+        return result;
+    };
+    p.touchBegin = function (e) {
+        console.log(GlobalConfig.isPageSwitchDone);
+        console.log("监听触摸事件");
+        this.touchPoint = [];
+        this.touchPoint[0] = e.localY;
+    };
+    p.touchEnd = function (e) {
+        this.touchPoint[1] = e.localY;
+        if (this.touchPoint[1] - this.touchPoint[0] > 50) {
+            if (this.prevFn)
+                this.prevFn();
+        }
+        else if (this.touchPoint[0] - this.touchPoint[1] > 50) {
+            if (this.nextFn)
+                this.nextFn();
+        }
+    };
+    p.swipePage = function (el, nextFn, prevFn) {
+        if (prevFn)
+            this.prevFn = prevFn;
+        if (nextFn)
+            this.nextFn = nextFn;
+        el.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.touchBegin, this);
+        el.addEventListener(egret.TouchEvent.TOUCH_END, this.touchEnd, this);
+    };
+    /**
+     * 页面切换
+     * direction 切换方向 5上一页 6下一页
+     * By Fx 2016-8-22 15:52:31
+     */
+    p.sendpageAction = function (currentPageAction, nextPageAction, direction) {
+        if (direction === void 0) { direction = 6; }
+        // if(!GlobalConfig.isPageSwitchDone) return;
+        // GlobalConfig.isPageSwitchDone = false;
+        GlobalConfig.direction = direction;
+        game.AppFacade.getInstance().sendNotification(currentPageAction);
+        game.AppFacade.getInstance().sendNotification(nextPageAction);
+        // game.AppFacade.getInstance().removeMediator(currentPageAction);
     };
     return BaseMediator;
 }(puremvc.Mediator));

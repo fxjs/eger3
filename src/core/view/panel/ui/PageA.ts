@@ -8,10 +8,12 @@ module game {
 		constructor() {
 			super();
 			this.skinName = "PageASkin";
+			EffectUtils.playScaleEffect(this.pageClose);			
 		}
 
 		protected childrenCreated(): void {
 			super.childrenCreated();
-		}
+			// console.log("pageA 创建成功");
+		}		
 	}
 }

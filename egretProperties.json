@@ -1,7 +1,7 @@
 {
 	"native": {
 		"path_ignore": [],
-		"android_path": "../../../../../../../adt-bundle-windows-x86_64-20140624/egerpro2"
+		"android_path": "../../../../../../../adt-bundle-windows-x86_64-20140624/eger3"
 	},
 	"publish": {
 		"web": 0,

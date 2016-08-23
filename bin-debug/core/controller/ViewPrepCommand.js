@@ -16,6 +16,7 @@ var game;
             var main = GameLayerManager.gameLayer().panelLayer;
             // 在此注册 Page 类
             this.facade.registerMediator(new game.PageAMediator());
+            this.facade.registerMediator(new game.PageBMediator());
         };
         return ViewPrepCommand;
     }(puremvc.SimpleCommand));

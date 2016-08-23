@@ -18,35 +18,32 @@ var game;
             var data = notification.getBody();
             switch (notification.getName()) {
                 case PanelNotify.OPEN_PAGE_A: {
-                    //显示页面 + 动画效果                    
-                    this.showUI(this.pageA, false, 0, 0, 2);
+                    //显示页面 + 动画效果
+                    this.showUI(this.pageA, false, 0, 0, GlobalConfig.direction);
+                    // console.log("opened PageA ");
                     break;
                 }
                 case PanelNotify.CLOSE_PAGE_A: {
-                    this.closePanel(1);
+                    this.closePanel(GlobalConfig.direction);
+                    // console.log("closeed PageA ");
                     break;
                 }
             }
         };
         /**
-         * 初始化面板ui
+         * 页面切换
+         */
+        p.pageAction = function () {
+            var _this = this;
+            this.swipePage(this.pageA, function () { _this.sendpageAction(PanelNotify.CLOSE_PAGE_A, PanelNotify.OPEN_PAGE_B, 6); }, null);
+        };
+        /**
+         * 初始化面板
          */
         p.initUI = function () {
-            this.pageA.pageClose.addEventListener(egret.TouchEvent.TOUCH_TAP, this.closeButtonClick, this);
+            this.pageAction();
         };
-        /**
-         * 初始化面板数据
-         */
-        p.initData = function () {
-        };
-        /**
-         * 弹出面板前处理
-         */
-        // public beforShow(): void {
-        //     console.log("显示前 。。");
-        // }
         p.closeButtonClick = function (event) {
-            egret.log("page A 已关闭");
             this.closePanel();
         };
         PageAMediator.NAME = "PageAMediator";

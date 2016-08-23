@@ -5,10 +5,12 @@ var game;
         function PageA() {
             _super.call(this);
             this.skinName = "PageASkin";
+            EffectUtils.playScaleEffect(this.pageClose);
         }
         var d = __define,c=PageA,p=c.prototype;
         p.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
+            // console.log("pageA 创建成功");
         };
         return PageA;
     }(eui.Component));

@@ -40,6 +40,7 @@
     "src/core/view/main/ui/MainUISkin.exml",
     "src/core/view/panel/ui/PageCloseBtnSkin.exml",
     "src/core/view/panel/ui/PageASkin.exml",
+    "src/core/view/panel/ui/PageBSkin.exml",
     "src/core/view/scene/ui/HomeCitySkin.exml"
   ]
 }

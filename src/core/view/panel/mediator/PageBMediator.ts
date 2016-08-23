@@ -1,32 +1,32 @@
 module game {
 
-    export class PageAMediator extends BaseMediator {
-        public static NAME: string = "PageAMediator";
+    export class PageBMediator extends BaseMediator {
+        public static NAME: string = "PageBMediator";
 
         public constructor(viewComponent: any = null) {
-            super(PageAMediator.NAME, viewComponent);
+            super(PageBMediator.NAME, viewComponent);
         }
 
         public listNotificationInterests(): Array<any> {
             return [
-                PanelNotify.OPEN_PAGE_A,
-                PanelNotify.CLOSE_PAGE_A
+                PanelNotify.OPEN_PAGE_B,
+                PanelNotify.CLOSE_PAGE_B
             ];
         }
 
-        private pageA: PageA = new PageA();
+        private pageB: PageB = new PageB();
         public handleNotification(notification: puremvc.INotification): void {
             var data: any = notification.getBody();
             switch (notification.getName()) {
-                case PanelNotify.OPEN_PAGE_A: {
+                case PanelNotify.OPEN_PAGE_B: {
                     //显示页面 + 动画效果
-                    this.showUI(this.pageA, false, 0, 0, GlobalConfig.direction);
-                    // console.log("opened PageA ");
+                    this.showUI(this.pageB, false, 0, 0, GlobalConfig.direction);
+                    // console.log("opened PageB ");
                     break;
                 }
-                case PanelNotify.CLOSE_PAGE_A: {
+                case PanelNotify.CLOSE_PAGE_B: {
                     this.closePanel(GlobalConfig.direction);
-                    // console.log("closeed PageA ");
+                    // console.log("closeed PageB ");
                     break;
                 }
             }
@@ -36,7 +36,7 @@ module game {
          * 页面切换
          */
         private pageAction(): void {
-            this.swipePage(this.pageA, () => { this.sendpageAction(PanelNotify.CLOSE_PAGE_A, PanelNotify.OPEN_PAGE_B, 6) }, null);
+            this.swipePage(this.pageB ,() => { this.sendpageAction(PanelNotify.CLOSE_PAGE_B, PanelNotify.OPEN_PAGE_A, 6)}, () => { this.sendpageAction(PanelNotify.CLOSE_PAGE_B, PanelNotify.OPEN_PAGE_A, 5)});
         }
 
         /**
@@ -44,10 +44,6 @@ module game {
          */
         public initUI(): void {
             this.pageAction();
-        }
-
-        private closeButtonClick(event: egret.TouchEvent): void {
-            this.closePanel();
         }
     }
 }

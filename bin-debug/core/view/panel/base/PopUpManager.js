@@ -16,7 +16,7 @@ var PopUpManager;
     * effectType        0：没有动画 1:从中间轻微弹出 2：从中间猛烈弹出  3：从左向右 4：从右向左 5、从上到下 6、从下到上 7、淡入
     * duration          动画持续时间
     */
-    function addPopUp(panel, dark, popUpWidth, popUpHeight, effectType, isAlert, duration) {
+    function addPopUp(panel, dark, popUpWidth, popUpHeight, effectType, isAlert, duration, cb) {
         if (dark === void 0) { dark = false; }
         if (popUpWidth === void 0) { popUpWidth = 0; }
         if (popUpHeight === void 0) { popUpHeight = 0; }
@@ -35,10 +35,10 @@ var PopUpManager;
             this.darkSprite = new egret.Sprite();
             this.darkSprite.graphics.clear();
             this.darkSprite.graphics.beginFill(0x000000, 0.3);
-            this.darkSprite.graphics.drawRect(0, 0, GameConfig.curWidth(), GameConfig.curHeight());
+            this.darkSprite.graphics.drawRect(0, 0, GlobalConfig.curWidth(), GlobalConfig.curHeight());
             this.darkSprite.graphics.endFill();
-            this.darkSprite.width = GameConfig.curWidth();
-            this.darkSprite.height = GameConfig.curHeight();
+            this.darkSprite.width = GlobalConfig.curWidth();
+            this.darkSprite.height = GlobalConfig.curHeight();
             if (!GameLayerManager.gameLayer().panelLayer.contains(this.darkSprite)) {
                 GameLayerManager.gameLayer().panelLayer.addChild(this.darkSprite);
             }
@@ -47,18 +47,18 @@ var PopUpManager;
             this.darkSprite.visible = true;
         }
         GameLayerManager.gameLayer().panelLayer.addChild(panel);
-        GameConfig.curPanel = panel;
+        GlobalConfig.curPanel = panel;
         if (popUpWidth != 0) {
-            panel.x = GameConfig.curWidth() / 2 - popUpWidth / 2;
-            panel.y = GameConfig.curHeight() / 2 - popUpHeight / 2;
+            panel.x = GlobalConfig.curWidth() / 2 - popUpWidth / 2;
+            panel.y = GlobalConfig.curHeight() / 2 - popUpHeight / 2;
         }
         else {
             popUpWidth = panel.width;
             popUpHeight = panel.height;
         }
         //以下是弹窗动画
-        var leftX = GameConfig.curWidth() / 2 - popUpWidth / 2;
-        var upY = GameConfig.curHeight() / 2 - popUpHeight / 2;
+        var leftX = GlobalConfig.curWidth() / 2 - popUpWidth / 2;
+        var upY = GlobalConfig.curHeight() / 2 - popUpHeight / 2;
         switch (effectType) {
             case 0:
                 break;
@@ -68,7 +68,7 @@ var PopUpManager;
                 panel.scaleY = 0.5;
                 panel.x = panel.x + popUpWidth / 4;
                 panel.y = panel.y + popUpHeight / 4;
-                egret.Tween.get(panel).to({ alpha: 1, scaleX: 1, scaleY: 1, x: panel.x - popUpWidth / 4, y: panel.y - popUpHeight / 4 }, 300, egret.Ease.backOut);
+                egret.Tween.get(panel).to({ alpha: 1, scaleX: 1, scaleY: 1, x: panel.x - popUpWidth / 4, y: panel.y - popUpHeight / 4 }, 300, egret.Ease.backOut).call(cb);
                 break;
             case 2:
                 panel.alpha = 0;
@@ -76,56 +76,57 @@ var PopUpManager;
                 panel.scaleY = 0.5;
                 panel.x = panel.x + popUpWidth / 4;
                 panel.y = panel.y + popUpHeight / 4;
-                egret.Tween.get(panel).to({ alpha: 1, scaleX: 1, scaleY: 1, x: panel.x - popUpWidth / 4, y: panel.y - popUpHeight / 4 }, 600, egret.Ease.elasticOut);
+                egret.Tween.get(panel).to({ alpha: 1, scaleX: 1, scaleY: 1, x: panel.x - popUpWidth / 4, y: panel.y - popUpHeight / 4 }, 600, egret.Ease.elasticOut).call(cb);
                 break;
             case 3:
                 if (isAlert) {
                     panel.x = -popUpWidth;
-                    egret.Tween.get(panel).to({ x: leftX }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ x: leftX }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 else {
                     panel.x = -popUpWidth;
-                    egret.Tween.get(panel).to({ x: 0 }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ x: 0 }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 break;
             case 4:
                 if (isAlert) {
                     panel.x = popUpWidth;
-                    egret.Tween.get(panel).to({ x: leftX }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ x: leftX }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 else {
                     panel.x = popUpWidth;
-                    egret.Tween.get(panel).to({ x: 0 }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ x: 0 }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 break;
             case 5:
                 if (isAlert) {
                     panel.y = -popUpHeight;
-                    egret.Tween.get(panel).to({ y: upY }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ y: upY }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 else {
                     panel.y = -popUpHeight;
-                    egret.Tween.get(panel).to({ y: 0 }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ y: 0 }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 break;
             case 6:
                 if (isAlert) {
-                    panel.y = GameConfig.curHeight();
-                    egret.Tween.get(panel).to({ y: upY }, 500, egret.Ease.cubicOut);
+                    panel.y = GlobalConfig.curHeight();
+                    egret.Tween.get(panel).to({ y: upY }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 else {
                     panel.y = popUpHeight;
-                    egret.Tween.get(panel).to({ y: 0 }, 500, egret.Ease.cubicOut);
+                    egret.Tween.get(panel).to({ y: 0 }, 500, egret.Ease.cubicOut).call(cb);
                 }
                 break;
             case 7:
+                panel.alpha = 0;
                 if (isAlert) {
-                    panel.y = GameConfig.curHeight();
-                    egret.Tween.get(panel).to({ alpha: 1, y: upY }, duration, egret.Ease.cubicOut);
+                    panel.y = GlobalConfig.curHeight();
+                    egret.Tween.get(panel).to({ alpha: 1, y: upY }, duration, egret.Ease.cubicOut).call(cb);
                 }
                 else {
-                    panel.y = popUpHeight;
-                    egret.Tween.get(panel).to({ y: 0, alpha: 1 }, 500, egret.Ease.sineIn);
+                    //panel.y = popUpHeight;
+                    egret.Tween.get(panel).to({ alpha: 1 }, 500, egret.Ease.sineIn).call(cb);
                 }
                 break;
             default:

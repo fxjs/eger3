@@ -37,45 +37,46 @@ var Global;
     Global.getMessage = getMessage;
     //获取大写数字
     function getNumber(num) {
+        var str = '';
         switch (num) {
             case 0: {
-                return "零";
+                str = "零";
                 break;
             }
             case 1: {
-                return "一";
+                str = "一";
                 break;
             }
             case 2: {
-                return "二";
+                str = "二";
                 break;
             }
             case 3: {
-                return "三";
+                str = "三";
                 break;
             }
             case 4: {
-                return "四";
+                str = "四";
                 break;
             }
             case 5: {
-                return "五";
+                str = "五";
                 break;
             }
             case 6: {
-                return "六";
+                str = "六";
                 break;
             }
             case 7: {
-                return "七";
+                str = "七";
                 break;
             }
             case 8: {
-                return "八";
+                str = "八";
                 break;
             }
             case 9: {
-                return "九";
+                str = "九";
                 break;
             }
             default: {
@@ -83,6 +84,7 @@ var Global;
                 console.log("default case");
             }
         }
+        return str;
     }
     Global.getNumber = getNumber;
 })(Global || (Global = {}));
