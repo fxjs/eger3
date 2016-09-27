@@ -33,7 +33,7 @@ class EImage extends egret.Bitmap
         if(url==this._src) {
             if (img) {
                 var tt:egret.Texture = new egret.Texture();
-                tt._setBitmapData(img);
+                //tt._setBitmapData(img);
                 this.texture = tt;
             } else {
                 this.texture = null;
